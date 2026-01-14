@@ -6,7 +6,7 @@
 @data-import-header-padding: var(--spy-data-import-header-padding, 15px 30px);
 @data-import-hint-margin-top: var(--spy-data-import-hint-margin-top, 10px);
 
-.@{ajax-form-prefix-cls}-container {
+.spy-ajax-form-container {
     overflow-y: auto;
 
     &--loading {
@@ -39,7 +39,7 @@
         display: block;
         margin-bottom: @data-import-card-margin-bottom;
 
-        .@{input-prefix-cls}-group {
+        .ant-input-group {
             max-width: 100%;
         }
     }
@@ -61,28 +61,28 @@
             height: auto;
             padding: 12px;
             border-color: @green;
-            background-color: @input-bg;
+            background-color: var(--spy-input-bg, @spy-white);
             color: @ink;
 
             &::file-selector-button {
                 .transition-mixin(all);
-                min-height: @btn-height-base;
+                min-height: var(--spy-btn-height-base, 42px);
                 font: @font-default;
                 text-align: center;
-                color: @btn-primary-color;
+                color: var(--spy-btn-primary-color, @spy-white);
                 text-decoration: none;
-                box-shadow: @btn-shadow-default;
-                border: @btn-border;
-                border-radius: @btn-border-radius;
+                box-shadow: var(--spy-btn-shadow-default, 0 0 2px @transparent);
+                border: var(--spy-btn-border, var(--spy-btn-border-width, 1px) solid @transparent);
+                border-radius: var(--spy-btn-border-radius, @border-radius-base);
                 cursor: pointer;
                 background-color: @green;
                 font-weight: @font-weight-medium;
-                padding-left: @btn-horizontal-padding-base-md;
-                padding-right: @btn-horizontal-padding-base-md;
+                padding-left: var(--spy-btn-horizontal-padding-base-md, 19px);
+                padding-right: var(--spy-btn-horizontal-padding-base-md, 19px);
                 margin-right: 8px;
 
                 &:hover {
-                    box-shadow: @btn-shadow-hover;
+                    box-shadow: var(--spy-btn-shadow-hover, @box-shadow-1);
                 }
             }
         }
@@ -105,25 +105,25 @@
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        box-shadow: @btn-shadow-default;
+        box-shadow: var(--spy-btn-shadow-default, 0 0 2px @transparent);
         font: @font-default;
         text-align: center;
-        border-radius: @btn-border-radius;
-        border: @btn-border;
+        border-radius: var(--spy-btn-border-radius, @border-radius-base);
+        border: var(--spy-btn-border, var(--spy-btn-border-width, 1px) solid @transparent);
         text-decoration: none;
-        color: @btn-primary-color;
+        color: var(--spy-btn-primary-color, @spy-white);
         cursor: pointer;
         position: relative;
         background-color: @green;
         font-weight: @font-weight-medium;
         margin-bottom: 15px;
-        min-width: @btn-min-width-md;
-        min-height: @btn-height-md;
-        padding-left: @btn-horizontal-padding-base-md;
-        padding-right: @btn-horizontal-padding-base-md;
+        min-width: var(--spy-btn-min-width-md, 90px);
+        min-height: var(--spy-btn-height-md, 42px);
+        padding-left: var(--spy-btn-horizontal-padding-base-md, 19px);
+        padding-right: var(--spy-btn-horizontal-padding-base-md, 19px);
 
         &:hover {
-            box-shadow: @btn-shadow-hover;
+            box-shadow: var(--spy-btn-shadow-hover, @box-shadow-1);
         }
 
         svg {
@@ -145,7 +145,7 @@
     }
 
     &__options-card {
-        .@{form-item-prefix-cls} {
+        .ant-form-item {
             margin-bottom: 15px;
 
             &:last-child {
@@ -172,7 +172,7 @@
         align-items: center;
         gap: 8px;
         margin: 0 0 7px;
-        color: var(--spy-green, #11856e);
+        color: @green;
     }
 
     &__templates-list-link {
