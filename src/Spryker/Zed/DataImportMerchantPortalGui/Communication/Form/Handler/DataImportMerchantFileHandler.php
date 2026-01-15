@@ -7,10 +7,12 @@
 
 namespace Spryker\Zed\DataImportMerchantPortalGui\Communication\Form\Handler;
 
+use Exception;
 use Generated\Shared\Transfer\DataImportMerchantFileCollectionRequestTransfer;
 use Generated\Shared\Transfer\DataImportMerchantFileCollectionResponseTransfer;
 use Generated\Shared\Transfer\DataImportMerchantFileInfoTransfer;
 use Generated\Shared\Transfer\DataImportMerchantFileTransfer;
+use Spryker\Shared\Log\LoggerTrait;
 use Spryker\Shared\ZedUi\Configuration\ZedUiFormResponseBuilderInterface;
 use Spryker\Zed\DataImportMerchantPortalGui\Communication\Controller\FilesController;
 use Spryker\Zed\DataImportMerchantPortalGui\Communication\Form\DataImportMerchantFileForm;
@@ -22,10 +24,11 @@ use Symfony\Component\Form\FormInterface;
 
 class DataImportMerchantFileHandler
 {
-    /**
-     * @var string
-     */
-    protected const MESSAGE_SUCCESS = 'File import has been started';
+    use LoggerTrait;
+
+    protected const string MESSAGE_SUCCESS = 'File import has been started';
+
+    protected const string MESSAGE_ERROR = 'Something went wrong. Please try again later.';
 
     /**
      * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToDataImportMerchantFacadeInterface $dataImportMerchantFacade
@@ -54,8 +57,19 @@ class DataImportMerchantFileHandler
             ->addDataImportMerchantFile($dataImportMerchantFileTransfer)
             ->setIsTransactional(true);
 
-        $dataImportMerchantFileCollectionResponseTransfer = $this->dataImportMerchantFacade
-            ->createDataImportMerchantFileCollection($dataImportMerchantFileCollectionRequestTransfer);
+        try {
+            $dataImportMerchantFileCollectionResponseTransfer = $this->dataImportMerchantFacade
+                ->createDataImportMerchantFileCollection($dataImportMerchantFileCollectionRequestTransfer);
+        } catch (Exception $exception) {
+            $this->getLogger()->error(
+                sprintf('Something went wrong during creating data import: %s', $exception->getMessage()),
+                ['exception' => $exception],
+            );
+
+            $zedUiFormResponseBuilder->addErrorNotification($this->translatorFacade->trans(static::MESSAGE_ERROR));
+
+            return $zedUiFormResponseBuilder;
+        }
 
         if ($dataImportMerchantFileCollectionResponseTransfer->getErrors()->count()) {
             $translatedErrors = $this->translateGlossaryKeys($dataImportMerchantFileCollectionResponseTransfer);

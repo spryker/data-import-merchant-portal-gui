@@ -12,6 +12,7 @@
         "spryker/gui": "^3.64.0 || ^4.0.0",
         "spryker/gui-table": "^4.0.0",
         "spryker/kernel": "^3.76.0",
+        "spryker/log": "^3.18.1",
         "spryker/merchant-user": "^1.0.0",
         "spryker/symfony": "^3.18.0",
         "spryker/transfer": "^3.27.0",
