@@ -55,7 +55,7 @@ class DataImportMerchantPortalGuiToDataImportMerchantFacadeBridge implements Dat
     /**
      * @param \Generated\Shared\Transfer\MerchantTransfer $merchantTransfer
      *
-     * @return array<string, list<string>>
+     * @return array<string, array<string>>
      */
     public function getPossibleCsvHeadersIndexedByImporterType(MerchantTransfer $merchantTransfer): array
     {

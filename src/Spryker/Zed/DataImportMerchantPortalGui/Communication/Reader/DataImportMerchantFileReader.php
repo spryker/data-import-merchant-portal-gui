@@ -96,6 +96,7 @@ class DataImportMerchantFileReader implements DataImportMerchantFileReaderInterf
 
             $offset += $readCollectionBatchSize;
         } while (
+            /** @phpstan-ignore notIdentical.alwaysTrue */
             $dataImportMerchantFileCollectionTransfer->getDataImportMerchantFiles()->count() !== 0
         );
 

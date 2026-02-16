@@ -40,7 +40,7 @@ class DataImportMerchantPortalGuiMerchantAclRuleExpanderPlugin extends AbstractP
      *
      * @param array<\Generated\Shared\Transfer\RuleTransfer> $ruleTransfers
      *
-     * @return list<\Generated\Shared\Transfer\RuleTransfer>
+     * @return array<\Generated\Shared\Transfer\RuleTransfer>
      */
     public function expand(array $ruleTransfers): array
     {

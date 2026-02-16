@@ -97,6 +97,7 @@ class DataImportMerchantFileGuiTableDataProvider extends AbstractGuiTableDataPro
             );
 
         if (
+            /** @phpstan-ignore notIdentical.alwaysTrue */
             $dataImportMerchantFileCriteriaTransfer->getSortCollection() !== null
             && $dataImportMerchantFileCriteriaTransfer->getSortCollection()->count() !== 0
         ) {

@@ -27,6 +27,7 @@ class CsvHeaderConstraintValidator extends AbstractConstraintValidator
      */
     public function validate(mixed $value, Constraint|CsvHeaderConstraint $constraint): void
     {
+        /** @phpstan-ignore instanceof.alwaysTrue */
         if (!$value instanceof UploadedFile || !$constraint instanceof CsvHeaderConstraint) {
             return;
         }
