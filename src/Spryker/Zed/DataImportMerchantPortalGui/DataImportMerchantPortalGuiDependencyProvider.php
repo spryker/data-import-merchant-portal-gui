@@ -74,11 +74,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
      */
     public const SERVICE_GUI_TABLE_HTTP_DATA_REQUEST_EXECUTOR = 'gui_table_http_data_request_executor';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -96,11 +91,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addGuiTableFactory(Container $container): Container
     {
         $container->set(static::SERVICE_GUI_TABLE_FACTORY, function (Container $container) {
@@ -110,11 +100,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addGuiTableHttpDataRequestExecutor(Container $container): Container
     {
         $container->set(static::SERVICE_GUI_TABLE_HTTP_DATA_REQUEST_EXECUTOR, function (Container $container) {
@@ -124,11 +109,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addTranslatorFacade(Container $container): Container
     {
         $container->set(static::FACADE_TRANSLATOR, function (Container $container) {
@@ -140,11 +120,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDataImportMerchantFacade(Container $container): Container
     {
         $container->set(static::FACADE_DATA_IMPORT_MERCHANT, function (Container $container) {
@@ -156,11 +131,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantUserFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_USER, function (Container $container) {
@@ -172,11 +142,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addGlossaryFacade(Container $container): Container
     {
         $container->set(static::FACADE_GLOSSARY, function (Container $container) {
@@ -188,11 +153,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addZedUiFactory(Container $container): Container
     {
         $container->set(static::SERVICE_ZED_UI_FACTORY, function (Container $container) {
@@ -202,11 +162,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -218,11 +173,6 @@ class DataImportMerchantPortalGuiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFileSystemService(Container $container): Container
     {
         $container->set(static::SERVICE_FILE_SYSTEM, function (Container $container) {

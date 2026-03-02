@@ -30,22 +30,12 @@ class DataImportMerchantPortalGuiToDataImportMerchantFacadeBridge implements Dat
         $this->dataImportMerchantFacade = $dataImportMerchantFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCollectionTransfer
-     */
     public function getDataImportMerchantFileCollection(
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
     ): DataImportMerchantFileCollectionTransfer {
         return $this->dataImportMerchantFacade->getDataImportMerchantFileCollection($dataImportMerchantFileCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCollectionRequestTransfer $dataImportMerchantFileCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCollectionResponseTransfer
-     */
     public function createDataImportMerchantFileCollection(
         DataImportMerchantFileCollectionRequestTransfer $dataImportMerchantFileCollectionRequestTransfer
     ): DataImportMerchantFileCollectionResponseTransfer {

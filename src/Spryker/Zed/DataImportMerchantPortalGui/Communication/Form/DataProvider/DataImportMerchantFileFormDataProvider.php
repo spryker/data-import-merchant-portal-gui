@@ -18,11 +18,6 @@ use Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchant
 
 class DataImportMerchantFileFormDataProvider
 {
-    /**
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\DataImportMerchantPortalGuiConfig $dataImportMerchantPortalGuiConfig
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToMerchantUserFacadeInterface $merchantUserFacade
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToDataImportMerchantFacadeInterface $dataImportMerchantFacade
-     */
     public function __construct(
         protected DataImportMerchantPortalGuiConfig $dataImportMerchantPortalGuiConfig,
         protected DataImportMerchantPortalGuiToMerchantUserFacadeInterface $merchantUserFacade,
@@ -30,9 +25,6 @@ class DataImportMerchantFileFormDataProvider
     ) {
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileTransfer
-     */
     public function getData(): DataImportMerchantFileTransfer
     {
         $merchantUserTransfer = $this->merchantUserFacade->getCurrentMerchantUser();

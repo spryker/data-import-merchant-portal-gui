@@ -39,11 +39,6 @@ class DataImportMerchantFileForm extends AbstractType
      */
     public const OPTION_POSSIBLE_CSV_HEADERS = 'option_possible_csv_headers';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

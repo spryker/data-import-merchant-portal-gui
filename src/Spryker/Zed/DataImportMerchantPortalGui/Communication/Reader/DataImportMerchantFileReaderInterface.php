@@ -13,20 +13,10 @@ use Generated\Shared\Transfer\DataImportMerchantFileTransfer;
 
 interface DataImportMerchantFileReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCollectionTransfer
-     */
     public function getDataImportMerchantFileCollection(
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
     ): DataImportMerchantFileCollectionTransfer;
 
-    /**
-     * @param string $uuid
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileTransfer|null
-     */
     public function findDataImportMerchantFileByUuid(string $uuid): ?DataImportMerchantFileTransfer;
 
     /**

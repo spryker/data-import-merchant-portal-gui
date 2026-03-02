@@ -17,20 +17,10 @@ use Generated\Shared\Transfer\MerchantTransfer;
 
 interface DataImportMerchantPortalGuiToDataImportMerchantFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCollectionTransfer
-     */
     public function getDataImportMerchantFileCollection(
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
     ): DataImportMerchantFileCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCollectionRequestTransfer $dataImportMerchantFileCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCollectionResponseTransfer
-     */
     public function createDataImportMerchantFileCollection(
         DataImportMerchantFileCollectionRequestTransfer $dataImportMerchantFileCollectionRequestTransfer
     ): DataImportMerchantFileCollectionResponseTransfer;

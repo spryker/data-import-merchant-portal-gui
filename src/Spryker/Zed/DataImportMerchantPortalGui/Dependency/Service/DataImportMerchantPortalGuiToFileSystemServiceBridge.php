@@ -26,11 +26,6 @@ class DataImportMerchantPortalGuiToFileSystemServiceBridge implements DataImport
         $this->fileSystemService = $fileSystemService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemStreamTransfer $fileSystemStreamTransfer
-     *
-     * @return mixed
-     */
     public function readStream(FileSystemStreamTransfer $fileSystemStreamTransfer): mixed
     {
         return $this->fileSystemService->readStream($fileSystemStreamTransfer);

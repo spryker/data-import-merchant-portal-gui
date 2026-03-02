@@ -30,11 +30,6 @@ class DataImportMerchantFileHandler
 
     protected const string MESSAGE_ERROR = 'Something went wrong. Please try again later.';
 
-    /**
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToDataImportMerchantFacadeInterface $dataImportMerchantFacade
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToTranslatorFacadeInterface $translatorFacade
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToGlossaryFacadeInterface $glossaryFacade
-     */
     public function __construct(
         protected DataImportMerchantPortalGuiToDataImportMerchantFacadeInterface $dataImportMerchantFacade,
         protected DataImportMerchantPortalGuiToTranslatorFacadeInterface $translatorFacade,
@@ -42,12 +37,6 @@ class DataImportMerchantFileHandler
     ) {
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $dataImportMerchantFileForm
-     * @param \Spryker\Shared\ZedUi\Configuration\ZedUiFormResponseBuilderInterface $zedUiFormResponseBuilder
-     *
-     * @return \Spryker\Shared\ZedUi\Configuration\ZedUiFormResponseBuilderInterface
-     */
     public function handleDataImportMerchantFileCreation(
         FormInterface $dataImportMerchantFileForm,
         ZedUiFormResponseBuilderInterface $zedUiFormResponseBuilder
@@ -86,11 +75,6 @@ class DataImportMerchantFileHandler
             ->addActionRefreshTable(FilesController::ID_DATA_IMPORT_MERCHANT_FILE_TABLE);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $dataImportMerchantFileForm
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileTransfer
-     */
     protected function createDataImportMerchantFileTransfer(
         FormInterface $dataImportMerchantFileForm
     ): DataImportMerchantFileTransfer {

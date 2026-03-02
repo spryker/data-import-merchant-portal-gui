@@ -9,11 +9,6 @@ namespace Spryker\Zed\DataImportMerchantPortalGui\Communication\Writer;
 
 interface FileWriterInterface
 {
-    /**
-     * @param mixed|resource $fileStream
-     *
-     * @return callable
-     */
     public function write(mixed $fileStream): callable;
 
     /**

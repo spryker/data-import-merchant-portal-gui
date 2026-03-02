@@ -45,12 +45,6 @@ class DataImportMerchantFileGuiTableMapper implements DataImportMerchantFileGuiT
         DataImportMerchantFileTableConfigurationProvider::COL_KEY_CREATED_AT => self::COL_DATA_IMPORT_MERCHANT_FILE_CREATED_AT,
     ];
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer
-     */
     public function mapDataImportMerchantFileTableCriteriaTransferToDataImportMerchantFileCriteriaTransfer(
         DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer,
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
@@ -79,12 +73,6 @@ class DataImportMerchantFileGuiTableMapper implements DataImportMerchantFileGuiT
         return $dataImportMerchantFileCriteriaTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCollectionTransfer $dataImportMerchantFileCollectionTransfer
-     * @param \Generated\Shared\Transfer\GuiTableDataResponseTransfer $guiTableDataResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\GuiTableDataResponseTransfer
-     */
     public function mapDataImportMerchantFileCollectionTransferToGuiTableDataResponseTransfer(
         DataImportMerchantFileCollectionTransfer $dataImportMerchantFileCollectionTransfer,
         GuiTableDataResponseTransfer $guiTableDataResponseTransfer
@@ -98,12 +86,6 @@ class DataImportMerchantFileGuiTableMapper implements DataImportMerchantFileGuiT
         return $guiTableDataResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer
-     */
     protected function applyTableFilters(
         DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer,
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer

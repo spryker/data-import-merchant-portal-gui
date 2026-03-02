@@ -14,9 +14,6 @@ use Symfony\Component\HttpFoundation\HeaderUtils;
 
 class FileReader implements FileReaderInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Service\DataImportMerchantPortalGuiToFileSystemServiceInterface $fileSystemService
-     */
     public function __construct(
         protected DataImportMerchantPortalGuiToFileSystemServiceInterface $fileSystemService
     ) {
@@ -73,11 +70,6 @@ class FileReader implements FileReaderInterface
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTransfer $dataImportMerchantFileTransfer
-     *
-     * @return string
-     */
     protected function generateErrorsFileName(DataImportMerchantFileTransfer $dataImportMerchantFileTransfer): string
     {
         return sprintf(

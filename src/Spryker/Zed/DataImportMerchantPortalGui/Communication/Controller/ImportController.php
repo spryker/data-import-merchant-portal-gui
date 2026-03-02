@@ -29,11 +29,6 @@ class ImportController extends AbstractController
      */
     protected const MESSAGE_INVALID_FORM_DATA = 'Invalid form data';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function indexAction(Request $request): Response
     {
         $dataImportMerchantFileForm = $this->getFactory()

@@ -19,11 +19,6 @@ use Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchant
 
 class DataImportMerchantFileReader implements DataImportMerchantFileReaderInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\DataImportMerchantPortalGuiConfig $dataImportMerchantPortalGuiConfig
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToDataImportMerchantFacadeInterface $dataImportMerchantFacade
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToMerchantUserFacadeInterface $merchantUserFacade
-     */
     public function __construct(
         protected DataImportMerchantPortalGuiConfig $dataImportMerchantPortalGuiConfig,
         protected DataImportMerchantPortalGuiToDataImportMerchantFacadeInterface $dataImportMerchantFacade,
@@ -31,11 +26,6 @@ class DataImportMerchantFileReader implements DataImportMerchantFileReaderInterf
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCollectionTransfer
-     */
     public function getDataImportMerchantFileCollection(
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
     ): DataImportMerchantFileCollectionTransfer {
@@ -47,11 +37,6 @@ class DataImportMerchantFileReader implements DataImportMerchantFileReaderInterf
         return $this->dataImportMerchantFacade->getDataImportMerchantFileCollection($dataImportMerchantFileCriteriaTransfer);
     }
 
-    /**
-     * @param string $uuid
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileTransfer|null
-     */
     public function findDataImportMerchantFileByUuid(string $uuid): ?DataImportMerchantFileTransfer
     {
         $dataImportMerchantFileCriteriaTransfer = $this->createDataImportMerchantFileCriteriaTransfer($uuid);
@@ -170,11 +155,6 @@ class DataImportMerchantFileReader implements DataImportMerchantFileReaderInterf
         return $statusOptions;
     }
 
-    /**
-     * @param string|null $uuid
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer
-     */
     protected function createDataImportMerchantFileCriteriaTransfer(
         ?string $uuid = null
     ): DataImportMerchantFileCriteriaTransfer {

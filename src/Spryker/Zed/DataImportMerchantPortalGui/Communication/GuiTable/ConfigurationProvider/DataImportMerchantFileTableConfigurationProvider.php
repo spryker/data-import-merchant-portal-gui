@@ -162,19 +162,12 @@ class DataImportMerchantFileTableConfigurationProvider implements DataImportMerc
      */
     protected const URL_DOWNLOAD_SOURCE_FILE = '/data-import-merchant-portal-gui/download/source-file?uuid=${row.uuid}';
 
-    /**
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Communication\Reader\DataImportMerchantFileReaderInterface $dataImportMerchantFileReader
-     * @param \Spryker\Shared\GuiTable\GuiTableFactoryInterface $guiTableFactory
-     */
     public function __construct(
         protected DataImportMerchantFileReaderInterface $dataImportMerchantFileReader,
         protected GuiTableFactoryInterface $guiTableFactory
     ) {
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\GuiTableConfigurationTransfer
-     */
     public function getConfiguration(): GuiTableConfigurationTransfer
     {
         $guiTableConfigurationBuilder = $this->guiTableFactory->createConfigurationBuilder();
@@ -187,11 +180,6 @@ class DataImportMerchantFileTableConfigurationProvider implements DataImportMerc
         return $guiTableConfigurationBuilder->createConfiguration();
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return void
-     */
     protected function addColumns(GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder): void
     {
         $guiTableConfigurationBuilder
@@ -202,11 +190,6 @@ class DataImportMerchantFileTableConfigurationProvider implements DataImportMerc
             ->addColumnText(static::COL_KEY_IMPORTED_BY, static::COL_TITLE_IMPORTED_BY, false, true);
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return void
-     */
     protected function addFilters(GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder): void
     {
         $options = $this->dataImportMerchantFileReader->getFilterOptions();
@@ -235,11 +218,6 @@ class DataImportMerchantFileTableConfigurationProvider implements DataImportMerc
         );
     }
 
-    /**
-     * @param \Spryker\Shared\GuiTable\Configuration\Builder\GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder
-     *
-     * @return void
-     */
     protected function addRowActions(GuiTableConfigurationBuilderInterface $guiTableConfigurationBuilder): void
     {
         $guiTableConfigurationBuilder->addRowActionRedirect(

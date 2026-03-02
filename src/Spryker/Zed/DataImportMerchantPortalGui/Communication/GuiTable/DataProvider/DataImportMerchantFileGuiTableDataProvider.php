@@ -34,12 +34,6 @@ class DataImportMerchantFileGuiTableDataProvider extends AbstractGuiTableDataPro
      */
     protected const COL_ID_DATA_IMPORT_MERCHANT_FILE = 'spy_data_import_merchant_file.id_data_import_merchant_file';
 
-    /**
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Communication\GuiTable\Mapper\DataImportMerchantFileGuiTableMapperInterface $dataImportMerchantFileGuiTableMapper
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Communication\Reader\DataImportMerchantFileReaderInterface $dataImportMerchantFileReader
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Service\DataImportMerchantPortalGuiToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToTranslatorFacadeInterface $translatorFacade
-     */
     public function __construct(
         protected DataImportMerchantFileGuiTableMapperInterface $dataImportMerchantFileGuiTableMapper,
         protected DataImportMerchantFileReaderInterface $dataImportMerchantFileReader,
@@ -82,11 +76,6 @@ class DataImportMerchantFileGuiTableDataProvider extends AbstractGuiTableDataPro
         return $guiTableDataResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer
-     */
     protected function createDataImportMerchantFileCriteriaTransfer(
         DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer
     ): DataImportMerchantFileCriteriaTransfer {
@@ -107,11 +96,6 @@ class DataImportMerchantFileGuiTableDataProvider extends AbstractGuiTableDataPro
         return $this->addDefaultSorting($dataImportMerchantFileCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer
-     */
     protected function addDefaultSorting(
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
     ): DataImportMerchantFileCriteriaTransfer {
@@ -125,11 +109,6 @@ class DataImportMerchantFileGuiTableDataProvider extends AbstractGuiTableDataPro
         return $dataImportMerchantFileCriteriaTransfer->setSortCollection($sortCollection);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTransfer $dataImportMerchantFileTransfer
-     *
-     * @return \Generated\Shared\Transfer\GuiTableRowDataResponseTransfer
-     */
     protected function getRowData(
         DataImportMerchantFileTransfer $dataImportMerchantFileTransfer
     ): GuiTableRowDataResponseTransfer {
@@ -164,11 +143,6 @@ class DataImportMerchantFileGuiTableDataProvider extends AbstractGuiTableDataPro
         return $availableActions;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTransfer $dataImportMerchantFileTransfer
-     *
-     * @return bool
-     */
     protected function merchantDataImportHasErrors(DataImportMerchantFileTransfer $dataImportMerchantFileTransfer): bool
     {
         $errors = $dataImportMerchantFileTransfer->getImportResult()?->getErrors();
@@ -182,11 +156,6 @@ class DataImportMerchantFileGuiTableDataProvider extends AbstractGuiTableDataPro
         return count($decodedErrors) > 0;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTransfer $dataImportMerchantFileTransfer
-     *
-     * @return string|null
-     */
     protected function formatImportedByColumnData(DataImportMerchantFileTransfer $dataImportMerchantFileTransfer): ?string
     {
         $userTransfer = $dataImportMerchantFileTransfer->getUser();

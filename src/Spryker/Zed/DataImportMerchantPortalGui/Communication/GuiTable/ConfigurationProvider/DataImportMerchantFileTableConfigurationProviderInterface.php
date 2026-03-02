@@ -13,8 +13,5 @@ use Generated\Shared\Transfer\GuiTableConfigurationTransfer;
 
 interface DataImportMerchantFileTableConfigurationProviderInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\GuiTableConfigurationTransfer
-     */
     public function getConfiguration(): GuiTableConfigurationTransfer;
 }

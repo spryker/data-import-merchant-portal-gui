@@ -14,23 +14,11 @@ use Generated\Shared\Transfer\GuiTableDataResponseTransfer;
 
 interface DataImportMerchantFileGuiTableMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataImportMerchantFileCriteriaTransfer
-     */
     public function mapDataImportMerchantFileTableCriteriaTransferToDataImportMerchantFileCriteriaTransfer(
         DataImportMerchantFileTableCriteriaTransfer $dataImportMerchantFileTableCriteriaTransfer,
         DataImportMerchantFileCriteriaTransfer $dataImportMerchantFileCriteriaTransfer
     ): DataImportMerchantFileCriteriaTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\DataImportMerchantFileCollectionTransfer $dataImportMerchantFileCollectionTransfer
-     * @param \Generated\Shared\Transfer\GuiTableDataResponseTransfer $guiTableDataResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\GuiTableDataResponseTransfer
-     */
     public function mapDataImportMerchantFileCollectionTransferToGuiTableDataResponseTransfer(
         DataImportMerchantFileCollectionTransfer $dataImportMerchantFileCollectionTransfer,
         GuiTableDataResponseTransfer $guiTableDataResponseTransfer

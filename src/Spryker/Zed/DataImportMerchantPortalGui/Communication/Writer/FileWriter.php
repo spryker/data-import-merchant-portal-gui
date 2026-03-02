@@ -12,9 +12,6 @@ use Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchant
 
 class FileWriter implements FileWriterInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImportMerchantPortalGui\Dependency\Facade\DataImportMerchantPortalGuiToTranslatorFacadeInterface $translatorFacade
-     */
     public function __construct(
         protected DataImportMerchantPortalGuiToTranslatorFacadeInterface $translatorFacade
     ) {
